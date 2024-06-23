@@ -1,5 +1,7 @@
 package com.github.ljl.servlet.web;
 
+import com.github.ljl.servlet.web.util.HttpUtil;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -30,17 +32,10 @@ public class IndexServlet extends HttpServlet {
         try {
             Class<?> responseClass = resp.getClass();
             Method writeMethod = responseClass.getMethod("write", String.class);
-            writeMethod.invoke(resp, IndexServlet.http200Resp(content));
+            writeMethod.invoke(resp, HttpUtil.http200Resp(content));
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static String http200Resp(String rawText) {
-        String format = "HTTP/1.1 200 OK\r\n" +
-                "Content-Type: text/plain\r\n" +
-                "\r\n" +
-                "%s";
 
-        return String.format(format, rawText);
-    }
 }
