@@ -1,6 +1,9 @@
-package com.github.ljl.servlet.web.filter;
+package com.github.ljl.web.servlet.filter;
 
-import javax.servlet.*;
+import javax.servlet.FilterChain;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpFilter;
 import java.io.IOException;
 
@@ -16,9 +19,9 @@ public class FirstFilter extends HttpFilter {
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
-        System.out.println("[web-demo] Before web-demo FirstFilter");
+        System.out.println("[webapp1] Before web-demo FirstFilter");
         filterChain.doFilter(servletRequest, servletResponse);
-        System.out.println("[web-demo] After web-demo FirstFilter");
+        System.out.println("[webapp1] After web-demo FirstFilter");
     }
 
     @Override

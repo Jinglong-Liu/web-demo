@@ -1,10 +1,10 @@
-package com.github.ljl.servlet.web.util;
+package com.github.ljl.web.lib.util;
 
 /**
  * @program: web-demo
  * @description:
  * @author: ljl
- * @create: 2024-06-23 11:31
+ * @create: 2024-06-25 09:48
  **/
 
 public class HttpUtil {

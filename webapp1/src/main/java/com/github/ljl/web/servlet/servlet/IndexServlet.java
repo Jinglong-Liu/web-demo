@@ -1,6 +1,6 @@
-package com.github.ljl.servlet.web;
+package com.github.ljl.web.servlet.servlet;
 
-import com.github.ljl.servlet.web.util.HttpUtil;
+import com.github.ljl.web.lib.util.HttpUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -21,12 +21,12 @@ public class IndexServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        writeToResponse(resp,"servlet index get");
+        writeToResponse(resp,"[webapp1] servlet index get");
     }
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
-        writeToResponse(resp,"servlet index post");
+        writeToResponse(resp,"[webapp1] servlet index post");
     }
     private void writeToResponse(HttpServletResponse resp, String content) {
         try {
