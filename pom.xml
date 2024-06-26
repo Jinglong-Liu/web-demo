@@ -10,6 +10,7 @@
   <modules>
     <module>webapp1</module>
     <module>webapp2</module>
+    <module>webapp3</module>
     <module>common-lib</module>
   </modules>
   <packaging>pom</packaging>
