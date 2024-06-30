@@ -4,14 +4,21 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
+<!--  <parent>-->
+<!--    <artifactId>webapps-build</artifactId>-->
+    <groupId>org.example</groupId>
+    <version>0.8.2</version>
+<!--  </parent>-->
+
   <artifactId>web-demo</artifactId>
-  <version>0.7.1</version>
   <modules>
+    <module>common-lib</module>
     <module>webapp1</module>
     <module>webapp2</module>
     <module>webapp3</module>
-    <module>common-lib</module>
+    <module>webapp4</module>
+    <module>springmvc-app1</module>
+    <module>springmvc-app2</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -20,6 +27,7 @@
   <url>http://www.example.com</url>
 
   <properties>
+    <parent.version>0.8.2</parent.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
@@ -44,17 +52,19 @@
 
   <build>
     <finalName>web-demo</finalName>
-    <plugins>
-      <plugin>
-        <groupId>org.apache.tomcat.maven</groupId>
-        <artifactId>tomcat7-maven-plugin</artifactId>
-        <version>${plugin.tomcat.version}</version>
-        <configuration>
-          <port>8080</port>
-          <path>/</path>
-          <uriEncoding>${project.build.sourceEncoding}</uriEncoding>
-        </configuration>
-      </plugin>
-    </plugins>
+    <pluginManagement>
+      <plugins>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+        <!-- 其他插件配置 -->
+      </plugins>
+    </pluginManagement>
   </build>
 </project>
